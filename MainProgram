@@ -43,8 +43,6 @@ namespace Hra_02
 
         bool klikol_z50 = false;
 
-        // Zabezpečuje nastavenie farieb pri označovaní odpovede
-
         public void Oznac(string p)
         {
             hodnotenie.Enabled = true;
