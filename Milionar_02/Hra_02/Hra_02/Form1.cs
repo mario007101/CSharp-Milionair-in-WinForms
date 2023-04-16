@@ -141,10 +141,9 @@ namespace Hra_02
             graf.ChartAreas[0].AxisY.Maximum = 100;
             graf.ChartAreas[0].AxisY.Minimum = 0;
             graf.ChartAreas[0].AxisY.Interval = 10;
-
             graf.ChartAreas[0].AxisX.Title = "Hlasovanie publika";
             
-            if (klikol_z50)
+            if (klikol_z50 && label5.Text == "OK")
             {
                 h1 = rnd.Next(100);
                 h2 = 100 - h1;
@@ -152,7 +151,6 @@ namespace Hra_02
                 s2 = s.Substring(1, 1);
                 graf.Series["Series"].Points.AddXY(s1, h1);
                 graf.Series["Series"].Points.AddXY(s2, h2);
-
             }
 
             else
@@ -265,9 +263,9 @@ namespace Hra_02
         }
 
         private void hodnotenie_Click(object sender, EventArgs e)
-        {
-           
+        {     
             hodnotenie.Enabled = false;
+            label5.Text = null;
             ukoncenie.Enabled = true;
             dalsia_otazka.Enabled = true;
             int kolo = level - 1;
@@ -275,7 +273,7 @@ namespace Hra_02
             if (odpoved == q.OK)
             {
                 vyhra = suma[kolo].Text;
-                if (new List<int> { 2, 5, 8, 11}.Contains(kolo)) 
+                if (new List<int> {2, 5, 8, 11}.Contains(kolo)) 
                 {
                     garantovana_vyhra = suma[kolo].Text;
                     co[kolo].BackColor = Color.Green;
@@ -375,9 +373,9 @@ namespace Hra_02
 
         private void z50_Click(object sender, EventArgs e)
         {
-            klikol_z50 = true;
             z50.Enabled = false;
-
+            klikol_z50 = true;
+            label5.Text = "OK";
             switch (q.p1)
             {
                 case "A":
@@ -498,15 +496,15 @@ namespace Hra_02
                     C.Text = q.C;
                     D.Text = q.D;
 
-           if (A.Text == fraza[v50[permutacia_vymazat, 0]])  q.p1 = "A";
-           if (B.Text == fraza[v50[permutacia_vymazat, 0]])  q.p1 = "B";
-           if (C.Text == fraza[v50[permutacia_vymazat, 0]])  q.p1 = "C";
-           if (D.Text == fraza[v50[permutacia_vymazat, 0]])  q.p1 = "D";
+                if (A.Text == fraza[v50[permutacia_vymazat, 0]])  q.p1 = "A";
+                if (B.Text == fraza[v50[permutacia_vymazat, 0]])  q.p1 = "B";
+                if (C.Text == fraza[v50[permutacia_vymazat, 0]])  q.p1 = "C";
+                if (D.Text == fraza[v50[permutacia_vymazat, 0]])  q.p1 = "D";
 
-           if  (A.Text == fraza[v50[permutacia_vymazat, 1]]) q.p2 = "A";
-           if  (B.Text == fraza[v50[permutacia_vymazat, 1]]) q.p2 = "B";
-           if  (C.Text == fraza[v50[permutacia_vymazat, 1]]) q.p2 = "C";
-           if  (D.Text == fraza[v50[permutacia_vymazat, 1]]) q.p2 = "D";
+                if  (A.Text == fraza[v50[permutacia_vymazat, 1]]) q.p2 = "A";
+                if  (B.Text == fraza[v50[permutacia_vymazat, 1]]) q.p2 = "B";
+                if  (C.Text == fraza[v50[permutacia_vymazat, 1]]) q.p2 = "C";
+                if  (D.Text == fraza[v50[permutacia_vymazat, 1]]) q.p2 = "D";
                                
                 }
                 i++;
@@ -515,7 +513,7 @@ namespace Hra_02
 
         private void dalsia_otazka_Click(object sender, EventArgs e)
         {           
-            citaj_otazku();
+            citaj_otazku();           
             priatel.Visible = false;
             if(level==1)
             {
@@ -614,7 +612,7 @@ namespace Hra_02
             suma[3].Text = "1 000 €"; suma[7].Text = "8 000 €"; suma[11].Text = "50 000 €";
 
             level = 1;
-            otazka.Text = "Stredná primeyselná škola strojnícka a elektrotechnická, Nitra";
+            otazka.Text = "Stredná priemyselná škola strojnícka a elektrotechnická, Nitra";
             A.Text = "Mário Markovič";
             B.Text = "IV.A trieda";
             C.Text = "školský rok";

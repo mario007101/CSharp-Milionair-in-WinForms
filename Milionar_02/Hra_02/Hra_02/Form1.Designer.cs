@@ -30,7 +30,7 @@ namespace Hra_02
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             this.button1 = new System.Windows.Forms.Button();
             this.A = new System.Windows.Forms.Label();
             this.B = new System.Windows.Forms.Label();
@@ -52,6 +52,7 @@ namespace Hra_02
             this.panel2 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.priatel = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.graf)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -233,9 +234,9 @@ namespace Hra_02
             // graf
             // 
             this.graf.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            chartArea2.AxisX.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            chartArea2.Name = "ChartArea1";
-            this.graf.ChartAreas.Add(chartArea2);
+            chartArea1.AxisX.TitleFont = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            chartArea1.Name = "ChartArea1";
+            this.graf.ChartAreas.Add(chartArea1);
             this.graf.Location = new System.Drawing.Point(608, -188);
             this.graf.Name = "graf";
             this.graf.Size = new System.Drawing.Size(377, 257);
@@ -305,6 +306,16 @@ namespace Hra_02
             this.priatel.Size = new System.Drawing.Size(635, 23);
             this.priatel.TabIndex = 20;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(1911, 9);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(35, 13);
+            this.label5.TabIndex = 21;
+            this.label5.Text = "label5";
+            this.label5.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -312,6 +323,7 @@ namespace Hra_02
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(1998, 794);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.graf);
             this.Controls.Add(this.priatel);
             this.Controls.Add(this.panel2);
@@ -330,6 +342,7 @@ namespace Hra_02
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -356,6 +369,7 @@ namespace Hra_02
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label priatel;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label5;
     }
 }
 
